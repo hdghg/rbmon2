@@ -1,0 +1,66 @@
+[
+  {
+    "name": "net.dv8tion.jda.api.entities.Guild"
+  },
+  {
+    "name": "net.dv8tion.jda.api.entities.Guild[]"
+  },
+  {
+    "name": "net.dv8tion.jda.api.entities.Category"
+  },
+  {
+    "name": "net.dv8tion.jda.api.entities.Category[]"
+  },
+  {
+    "name": "net.dv8tion.jda.api.entities.StoreChannel"
+  },
+  {
+    "name": "net.dv8tion.jda.api.entities.StoreChannel[]"
+  },
+  {
+    "name": "net.dv8tion.jda.api.entities.TextChannel"
+  },
+  {
+    "name": "net.dv8tion.jda.api.entities.TextChannel[]"
+  },
+  {
+    "name": "net.dv8tion.jda.api.entities.VoiceChannel"
+  },
+  {
+    "name": "net.dv8tion.jda.api.entities.VoiceChannel[]"
+  },
+  {
+    "name": "net.dv8tion.jda.api.entities.PrivateChannel"
+  },
+  {
+    "name": "net.dv8tion.jda.api.entities.PrivateChannel[]"
+  },
+  {
+    "name": "net.dv8tion.jda.api.entities.Role"
+  },
+  {
+    "name": "net.dv8tion.jda.api.entities.Role[]"
+  },
+  {
+    "name": "net.dv8tion.jda.api.entities.Emote"
+  },
+  {
+    "name": "net.dv8tion.jda.api.entities.Emote[]"
+  },
+  {
+    "name": "net.dv8tion.jda.api.entities.Member"
+  },
+  {
+    "name": "net.dv8tion.jda.api.entities.Member[]"
+  },
+  {
+    "name": "net.dv8tion.jda.api.managers.AudioManager"
+  },
+  {
+    "name": "net.dv8tion.jda.api.managers.AudioManager[]"
+  },
+  {
+    "name": "net.dv8tion.jda.api.hooks.ListenerAdapter",
+    "allPublicMethods": true
+  }
+]

@@ -5,4 +5,7 @@
         xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
                       http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-4.5.xsd">
     <include file="db/changelog/2024/01-init.xml"/>
+    <include file="db/changelog/2024/02-original-names.xml"/>
+    <include file="db/changelog/2024/03-names-data.xml"/>
+    <include file="db/changelog/2024/04-schema-for-bonus.xml"/>
 </databaseChangeLog>

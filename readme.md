@@ -4,6 +4,8 @@
 
     docker run -v ${PWD}/h2db:/h2db \
         --env SPRING_DATASOURCE_URL=jdbc:h2:/h2db/db \
+        --env DISCORD_BOT_TOKEN=token \
+        --env DISCORD_CHANNEL_URL=https://discord.com/channels/1234/5678 \
         hdghg/rbmon2
 
 ### Run natively
