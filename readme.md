@@ -21,3 +21,7 @@ Probably because gradle unzips graalvm distro without symlinks creation
     # create correct symlinks
     ln -s ../lib/svm/bin/native-image native-image
     ln -s ../lib/svm/bin/native-image-configure native-image-configure
+
+#### Run in docker
+
+    docker run hdghg/rbmon2
