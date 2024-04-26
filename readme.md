@@ -1,5 +1,13 @@
 ###
 
+### Run in docker
+
+    docker run -v ${PWD}/h2db:/h2db \
+        --env SPRING_DATASOURCE_URL=jdbc:h2:/h2db/db \
+        hdghg/rbmon2
+
+### Run natively
+
 #### Prerequisites ubuntu
 
     sudo apt-get install build-essential libz-dev zlib1g-dev
@@ -21,7 +29,3 @@ Probably because gradle unzips graalvm distro without symlinks creation
     # create correct symlinks
     ln -s ../lib/svm/bin/native-image native-image
     ln -s ../lib/svm/bin/native-image-configure native-image-configure
-
-#### Run in docker
-
-    docker run hdghg/rbmon2

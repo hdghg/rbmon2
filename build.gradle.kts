@@ -27,11 +27,10 @@ repositories {
 }
 
 dependencies {
-	implementation("org.springframework.boot:spring-boot-starter-jdbc") {
-		exclude(group = "com.zaxxer", module = "HikariCP").because("To challenge myself")
-	}
+	implementation("org.springframework.boot:spring-boot-starter-jdbc")
 	implementation("org.springframework.boot:spring-boot-starter-web")
-	implementation("com.h2database:h2")
+	runtimeOnly("com.h2database:h2")
+	implementation("org.liquibase:liquibase-core")
 	compileOnly("org.projectlombok:lombok")
 	annotationProcessor("org.projectlombok:lombok")
 	testImplementation("org.springframework.boot:spring-boot-starter-test")
