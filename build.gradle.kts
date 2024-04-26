@@ -50,6 +50,7 @@ graalvmNative {
 				languageVersion.set(JavaLanguageVersion.of(22))
 				vendor.set(JvmVendorSpec.GRAAL_VM)
 			})
+			buildArgs.add("-march=x86-64-v2")
 		}
 	}
 }
