@@ -27,7 +27,9 @@ repositories {
 }
 
 dependencies {
-	implementation("org.springframework.boot:spring-boot-starter-jdbc")
+	implementation("org.springframework.boot:spring-boot-starter-jdbc") {
+		exclude(group = "com.zaxxer", module = "HikariCP").because("To challenge myself")
+	}
 	implementation("org.springframework.boot:spring-boot-starter-web")
 	implementation("com.h2database:h2")
 	compileOnly("org.projectlombok:lombok")
@@ -40,16 +42,8 @@ tasks.withType<Test> {
 }
 
 graalvmNative {
-	toolchainDetection = true
-}
-
-graalvmNative {
 	binaries {
 		named("main") {
-			javaLauncher.set(javaToolchains.launcherFor {
-				languageVersion.set(JavaLanguageVersion.of(22))
-				vendor.set(JvmVendorSpec.GRAAL_VM)
-			})
 			buildArgs.add("-march=x86-64-v2")
 		}
 	}
