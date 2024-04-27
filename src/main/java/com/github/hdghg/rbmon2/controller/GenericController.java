@@ -13,9 +13,10 @@ public class GenericController {
 
     @GetMapping("/version-message")
     public void testMessage() {
-        String disMsg = "Версия 0.3.0:\n" +
-                "* Инновационная форма поставки приложения: GraalVM native-image" +
-                "* Улучшено отображение кнопок при выполнении команды /bonus";
+        String disMsg = """
+                Версия 0.3.0:
+                * Инновационная форма поставки приложения: GraalVM native-image
+                * Улучшено отображение кнопок при выполнении команды /bonus""";
         jdaService.sendMessage(disMsg);
     }
 }
