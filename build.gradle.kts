@@ -1,12 +1,11 @@
 plugins {
     java
-    id("org.springframework.boot") version "3.2.5"
-    id("io.spring.dependency-management") version "1.1.4"
+    id("org.springframework.boot") version "3.3.0"
     id("org.graalvm.buildtools.native") version "0.10.1"
 }
 
 group = "com.github.hdghg"
-version = "0.3.0"
+version = "0.3.1"
 
 java {
     toolchain {
@@ -16,24 +15,19 @@ java {
     sourceCompatibility = JavaVersion.VERSION_17
 }
 
-configurations {
-    compileOnly {
-        extendsFrom(configurations.annotationProcessor.get())
-    }
-}
-
 repositories {
     mavenCentral()
     maven(url = "https://m2.dv8tion.net/releases")
 }
 
 dependencies {
+    implementation(platform(org.springframework.boot.gradle.plugin.SpringBootPlugin.BOM_COORDINATES))
     implementation("org.springframework.boot:spring-boot-starter-jdbc")
     implementation("org.springframework.boot:spring-boot-starter-web")
     runtimeOnly("com.h2database:h2")
     implementation("org.liquibase:liquibase-core")
-    compileOnly("org.projectlombok:lombok")
-    annotationProcessor("org.projectlombok:lombok")
+    compileOnly("org.projectlombok:lombok:1.18.32")
+    annotationProcessor("org.projectlombok:lombok:1.18.32")
     testImplementation("org.springframework.boot:spring-boot-starter-test")
 
     implementation("net.dv8tion:JDA:4.4.1_353")

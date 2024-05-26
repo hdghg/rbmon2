@@ -6,7 +6,7 @@ COPY settings.gradle.kts .
 COPY ./gradle ./gradle
 COPY ./src ./src
 RUN microdnf install findutils
-RUN ./gradlew --no-daemon clean nativeCompile
+RUN ./gradlew --no-daemon --console=plain clean nativeCompile
 
 FROM ubuntu:22.04
 COPY --from=0 ./opt/demo/build/native/nativeCompile/rbmon2 /app/rbmon2
