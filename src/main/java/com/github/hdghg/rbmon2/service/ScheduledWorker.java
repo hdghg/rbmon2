@@ -11,9 +11,11 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.web.client.RestTemplateBuilder;
 import org.springframework.scheduling.annotation.Scheduled;
 import org.springframework.stereotype.Component;
+import org.springframework.transaction.annotation.Transactional;
 
 import java.io.ByteArrayInputStream;
 import java.io.IOException;
+import java.io.UncheckedIOException;
 import java.time.Duration;
 import java.time.Instant;
 import java.util.HashMap;
@@ -49,7 +51,8 @@ public class ScheduledWorker {
     }
 
     @Scheduled(fixedDelayString = "${interval.check-rb}", timeUnit = TimeUnit.SECONDS, initialDelay = 15)
-    public void checkRb() throws IOException {
+    @Transactional
+    public void checkRb() {
         log.info("Checking rb status...");
 
         List<Transition> currentStatus = transitionService.current();
@@ -68,6 +71,8 @@ public class ScheduledWorker {
                 log.warn("Call to web page resulted with empty body");
                 return;
             }
+        } catch (IOException e) {
+            throw new UncheckedIOException(e);
         }
         List<RbEntry> newStatus = htmlParser.parse(new ByteArrayInputStream(bytes));
         Map<String, String> correctNames = rbInfoRepository.correctNames();
