@@ -41,11 +41,11 @@ public class TransitionRepository {
     public List<Transition> currentStatus() {
         return jdbcTemplate.query("""
                 with cte as (
-                  select name as name, max(at) as at from transition
+                  select max(transition_id) id from transition
                   group by name
                 )
                 select t.* from transition t
-                join cte c on t.name = c.name and t.at = c.at
+                where t.transition_id in (select id from cte c)
                 order by at desc""", MAPPER);
     }
 

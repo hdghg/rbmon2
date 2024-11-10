@@ -89,5 +89,14 @@
         "parameterTypes": []
       }
     ]
+  },
+  {
+    "name": "liquibase.parser.SqlParserFactory",
+    "methods": [
+      {
+        "name": "<init>",
+        "parameterTypes": []
+      }
+    ]
   }
 ]

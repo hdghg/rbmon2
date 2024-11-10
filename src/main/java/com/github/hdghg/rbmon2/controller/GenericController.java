@@ -14,8 +14,8 @@ public class GenericController {
     @GetMapping("/version-message")
     public void testMessage() {
         String disMsg = """
-                Версия 0.3.2:
-                * Улучшена обработка сетевых ошибок""";
+                Версия 0.3.3:
+                * Исправлены проблемы производительности""";
         jdaService.sendMessage(disMsg);
     }
 }
